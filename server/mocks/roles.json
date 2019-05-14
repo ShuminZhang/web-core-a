@@ -1,0 +1,90 @@
+/** roles
+  * @url /roles
+  */
+  [
+    {
+      "id": "0000",
+      "role": "user",
+      "name": "登录就有的权限",
+      "notes": "@csentence",
+      "cdate": "@date"
+    },
+    {
+      "id": "0001",
+      "role": "admin",
+      "name": "系统管理员",
+      "notes": "@csentence",
+      "cdate": "@date"
+    },
+    {
+      "id": "0099",
+      "role": "super",
+      "name": "使用全部功能的权限",
+      "notes": "@csentence",
+      "cdate": "@date"
+    },
+    {
+      "id": "0101",
+      "role": "student",
+      "name": "学生用户",
+      "notes": "@csentence",
+      "cdate": "@date"
+    },
+    {
+      "id": "0801",
+      "role": "leader-race",
+      "name": "竞赛队长",
+      "notes": "@csentence",
+      "cdate": "@date"
+    },
+    {
+      "id": "0901",
+      "role": "leader-comp",
+      "name": "公司法人",
+      "notes": "@csentence",
+      "cdate": "@date"
+    },
+    {
+      "id": "1001",
+      "role": "teacher",
+      "name": "教师用户",
+      "notes": "@csentence",
+      "cdate": "@date"
+    },
+    {
+      "id": "1101",
+      "role": "dean",
+      "name": "大院长",
+      "notes": "@csentence",
+      "cdate": "@date"
+    },
+    {
+      "id": "1102",
+      "role": "dean-science",
+      "name": "科研院长",
+      "notes": "@csentence",
+      "cdate": "@date"
+    },
+    {
+      "id": "1103",
+      "role": "dean-teaching",
+      "name": "教学院长",
+      "notes": "@csentence",
+      "cdate": "@date"
+    },
+    {
+      "id": "1104",
+      "role": "dean-manage",
+      "name": "行政院长",
+      "notes": "@csentence",
+      "cdate": "@date"
+    },
+    {
+      "id": "1105",
+      "role": "dean-lab",
+      "name": "实验院长",
+      "notes": "@csentence",
+      "cdate": "@date"
+    }
+  ]
+  

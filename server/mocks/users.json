@@ -1,0 +1,206 @@
+/** users
+  * @url /users
+  */
+  [
+    {
+      "username": "admin",
+      "password": "123456",
+      "name": "@cname",
+      "phone": "13998465335",
+      "email": "@email",
+      "roleid": "0001"
+    },
+    {
+      "username": "dean",
+      "password": "123456",
+      "name": "@cname",
+      "phone": "13998465335",
+      "email": "@email",
+      "roleid": "1001"
+    },
+    {
+      "username": "student",
+      "password": "123456",
+      "name": "@cname",
+      "phone": "13998465335",
+      "email": "@email",
+      "roleid": "0101"
+    },
+    {
+      "username": "super",
+      "password": "123456",
+      "name": "@cname",
+      "phone": "13998465335",
+      "email": "@email",
+      "roleid": "0099"
+    },
+    {
+      "username": "teacher",
+      "password": "123456",
+      "name": "@cname",
+      "phone": "13998465335",
+      "email": "@email",
+      "roleid": "0101"
+    },
+    {
+      "username": "20162101@string('number', 4)",
+      "password": "123456",
+      "name": "@cname",
+      "phone": "13998465335",
+      "email": "@email",
+      "roleid": "0001"
+    },
+    {
+      "username": "20162101@string('number', 4)",
+      "password": "123456",
+      "name": "@cname",
+      "phone": "13998465335",
+      "email": "@email",
+      "roleid": "1001"
+    },
+    {
+      "username": "20162101@string('number', 4)",
+      "password": "123456",
+      "name": "@cname",
+      "phone": "13998465335",
+      "email": "@email",
+      "roleid": "0101"
+    },
+    {
+      "username": "20162101@string('number', 4)",
+      "password": "123456",
+      "name": "@cname",
+      "phone": "13998465335",
+      "email": "@email",
+      "roleid": "0099"
+    },
+    {
+      "username": "20162101@string('number', 4)",
+      "password": "123456",
+      "name": "@cname",
+      "phone": "13998465335",
+      "email": "@email",
+      "roleid": "0101"
+    },
+    {
+      "username": "20162101@string('number', 4)",
+      "password": "123456",
+      "name": "@cname",
+      "phone": "13998465335",
+      "email": "@email",
+      "roleid": "0001"
+    },
+    {
+      "username": "20162101@string('number', 4)",
+      "password": "123456",
+      "name": "@cname",
+      "phone": "13998465335",
+      "email": "@email",
+      "roleid": "1001"
+    },
+    {
+      "username": "20162101@string('number', 4)",
+      "password": "123456",
+      "name": "@cname",
+      "phone": "13998465335",
+      "email": "@email",
+      "roleid": "0101"
+    },
+    {
+      "username": "20162101@string('number', 4)",
+      "password": "123456",
+      "name": "@cname",
+      "phone": "13998465335",
+      "email": "@email",
+      "roleid": "0099"
+    },
+    {
+      "username": "20162101@string('number', 4)",
+      "password": "123456",
+      "name": "@cname",
+      "phone": "13998465335",
+      "email": "@email",
+      "roleid": "0101"
+    },
+    {
+      "username": "20162101@string('number', 4)",
+      "password": "123456",
+      "name": "@cname",
+      "phone": "13998465335",
+      "email": "@email",
+      "roleid": "0001"
+    },
+    {
+      "username": "20162101@string('number', 4)",
+      "password": "123456",
+      "name": "@cname",
+      "phone": "13998465335",
+      "email": "@email",
+      "roleid": "1001"
+    },
+    {
+      "username": "20162101@string('number', 4)",
+      "password": "123456",
+      "name": "@cname",
+      "phone": "13998465335",
+      "email": "@email",
+      "roleid": "0101"
+    },
+    {
+      "username": "20162101@string('number', 4)",
+      "password": "123456",
+      "name": "@cname",
+      "phone": "13998465335",
+      "email": "@email",
+      "roleid": "0099"
+    },
+    {
+      "username": "20162101@string('number', 4)",
+      "password": "123456",
+      "name": "@cname",
+      "phone": "13998465335",
+      "email": "@email",
+      "roleid": "0101"
+    },
+    {
+      "username": "20162101@string('number', 4)",
+      "password": "123456",
+      "name": "@cname",
+      "phone": "13998465335",
+      "email": "@email",
+      "roleid": "0001"
+    },
+    {
+      "username": "20162101@string('number', 4)",
+      "password": "123456",
+      "name": "@cname",
+      "phone": "13998465335",
+      "email": "@email",
+      "roleid": "1001"
+    },
+    {
+      "username": "20162101@string('number', 4)",
+      "password": "123456",
+      "name": "@cname",
+      "phone": "13998465335",
+      "email": "@email",
+      "roleid": "0101"
+    },
+    {
+      "username": "20162101@string('number', 4)",
+      "password": "123456",
+      "name": "@cname",
+      "phone": "13998465335",
+      "email": "@email",
+      "roleid": "0099"
+    },
+    {
+      "username": "20162101@string('number', 4)",
+      "password": "123456",
+      "name": "@cname",
+      "phone": "13998465335",
+      "email": "@email",
+      "roleid": "0101"
+    }
+  ]
+  
