@@ -1,20 +1,26 @@
 {
-    "/uploads/*": {
-      "target": "http://localhost:8000",
-      "secure": false,
-      "changeOrigin": true,
-      "logLevel": "debug"
-    },
-    "/upload/*": {
-      "target": "http://localhost:8000",
-      "secure": false,
-      "changeOrigin": true,
-      "logLevel": "debug"
-    },
-    "/api/*": {
-        "target": "http://localhost:8000",
-        "secure": false,
-        "changeOrigin": true,
-        "logLevel": "debug"
-      }
+  "/uploads/*": {
+    "target": "http://localhost:8000",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/upload/*": {
+    "target": "http://localhost:8000",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/maga/*": {
+    "target": "http://localhost:8000",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/tpss/*": {
+    "target": "http://localhost:8000",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
   }
+}
