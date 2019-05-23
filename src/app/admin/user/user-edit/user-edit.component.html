@@ -1,3 +1,54 @@
-<p>
-  user-edit works!
-</p>
+<form nz-form style="background:lightgrey;margin-left:5px;border-radius:5px;">
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" nzFor="username">username</nz-form-label>
+    <nz-form-control [nzSpan]="14">
+      <input nz-input name="username" type="username" id="username">
+    </nz-form-control>
+  </nz-form-item >
+
+  <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="password">password</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input name="password" type="password" id="password">
+      </nz-form-control>
+    </nz-form-item >
+
+    <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzFor="name">name</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <input nz-input name="name" type="name" id="name">
+        </nz-form-control>
+      </nz-form-item >
+
+      <nz-form-item>
+          <nz-form-label [nzSpan]="6" nzFor="phone">phone</nz-form-label>
+          <nz-form-control [nzSpan]="14">
+            <input nz-input name="phone" type="phone" id="phone">
+          </nz-form-control>
+        </nz-form-item >
+
+        <nz-form-item>
+            <nz-form-label [nzSpan]="6" nzFor="email">E-mail</nz-form-label>
+            <nz-form-control [nzSpan]="14">
+              <input nz-input name="email" type="email" id="email">
+            </nz-form-control>
+          </nz-form-item >
+
+          <nz-form-item>
+              <nz-form-label [nzSpan]="6" nzFor="roleid">roleid</nz-form-label>
+              <nz-form-control [nzSpan]="14">
+                <input nz-input name="roleid" type="roleid" id="roleid">
+              </nz-form-control>
+            </nz-form-item >
+
+            <nz-divider></nz-divider>
+
+            <nz-form-item>
+                <nz-form-control [nzOffset]="7" [nzSpan]="12">
+                  <button nz-button nzType="primary" [disabled]="!validateForm.valid">Submit</button>
+                  <button nz-button (click)="resetForm($event)">Reset</button>
+                </nz-form-control>
+              </nz-form-item>
+
+</form>

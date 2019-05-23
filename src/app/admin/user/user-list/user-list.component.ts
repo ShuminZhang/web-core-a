@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-user-list',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserListComponent implements OnInit {
 
-  constructor() { }
+  api:string='http://localhost:4200/maga/users';
+
+  userDataList:any=[];
+
+  constructor(private http:HttpClient) { }
 
   ngOnInit() {
+    this.http.get(this.api).subscribe(
+      response=>{
+        this.userDataList=response;
+      }
+    )
   }
 
 }
