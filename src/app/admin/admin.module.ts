@@ -17,6 +17,7 @@ import { MenuTreeComponent } from './authority/menu-tree/menu-tree.component';
 import { MenuEditComponent } from './authority/menu-edit/menu-edit.component';
 import { PermissionComponent } from './authority/permission/permission.component';
 import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,8 @@ import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
   imports: [
     CommonModule,
     AdminRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
     NgZorroAntdModule
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }]

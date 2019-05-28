@@ -1,15 +1,15 @@
 <nz-input-group [nzSuffix]="suffixIconSearch" style="margin:5px;">
-  <input type="text" nz-input placeholder="请输入查询关键字" />
+  <input type="text" nz-input placeholder="请输入查询关键字" (keyup.enter)="doUserSearch" [(ngModel)]="userKeyWords" />
 </nz-input-group>
 <ng-template #suffixIconSearch>
-  <i nz-icon type="search"></i>
+  <i nz-icon type="search" (click)="doUserSearch()"></i>
 </ng-template>
 
 <div nz-row>
   <div nz-col nzSpan="14">
-    <app-user-list></app-user-list>
+    <app-user-list #userList></app-user-list>
   </div>
   <div nz-col nzSpan="10">
-    <app-user-edit></app-user-edit>
+    <app-user-edit #userEdit></app-user-edit>
   </div>
 </div>

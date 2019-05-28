@@ -46,7 +46,8 @@
 
             <nz-form-item>
                 <nz-form-control [nzOffset]="7" [nzSpan]="12">
-                  <button nz-button nzType="primary" [disabled]="!validateForm.valid">Submit</button>
+                  <!-- [disabled]="!validateForm.valid" -->
+                  <button nz-button nzType="primary" >Submit</button>
                   <button nz-button (click)="resetForm($event)">Reset</button>
                 </nz-form-control>
               </nz-form-item>

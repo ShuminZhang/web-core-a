@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
+  @ViewChild('userList') userlist;
+  @ViewChild('userEdit') useredit;
+
+  userKeyWords:string='';
+
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  doUserSearch(){
+    this.userlist.doSearch(this.userKeyWords);
   }
 
 }

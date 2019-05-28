@@ -7,7 +7,7 @@ import { LoginComponent } from './portal/start/login/login.component';
 import { ForgetComponent } from './portal/start/forget/forget.component';
 import { RegistComponent } from './portal/start/regist/regist.component';
 import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
@@ -26,6 +26,7 @@ registerLocaleData(zh);
     BrowserModule,
     AppRoutingModule,
     NgZorroAntdModule,
+    ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule
