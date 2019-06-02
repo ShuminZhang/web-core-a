@@ -19,6 +19,7 @@ export class UserComponent implements OnInit {
   }
 
   doUserSearch(){
+    console.log(this.userKeyWords);
     this.userlist.doSearch(this.userKeyWords);
   }
 

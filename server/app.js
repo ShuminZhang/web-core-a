@@ -9,6 +9,8 @@ var fs=require('fs');
 var mine=require('./mocks/mine').types;
 var mock=require('./mocks/tpss');
 
+var api=require('./mocks/api');
+
 const app = express();
 const PORT = 8000;
 
@@ -51,7 +53,7 @@ app.use('/uploads',express.static('uploads'))
 app.get('/',(req,res)=>res.send('Hello Express Server Root!'))
 app.use('/maga',mockjs(path.join(__dirname,'mocks/maga')))
 app.get('/tpss/*',restful);
-
+app.use('/api',api);
 app.post('/upload', function(req, res) {
   let sampleFile;
   let uploadPath;

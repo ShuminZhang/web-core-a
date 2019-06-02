@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { UserService } from 'src/sve/admin/user.service';
 
 @Component({
   selector: 'app-user-list',
@@ -20,7 +21,8 @@ export class UserListComponent implements OnInit {
   constructor(
     private el:ElementRef,
     private renderer2:Renderer2,
-    private http:HttpClient) { }
+    private http:HttpClient,
+    private user:UserService) { }
 
   ngOnInit() {
     this.http.get(this.api).subscribe(
@@ -28,6 +30,12 @@ export class UserListComponent implements OnInit {
         this.userDataList=response;
       }
     )
+
+    this.user.listUser(this.pageIndex,this.pageSize).subscribe(results=>{
+      console.log(results);
+    })
+
+
   }
 
   changePageIndex(e){
@@ -40,8 +48,10 @@ export class UserListComponent implements OnInit {
 
   doSearch(keys:string):void{
     console.log(keys);
+    this.user.searchUser(keys,this.pageIndex,this.pageSize).subscribe(results=>{
+      console.log(results);
+    })
   }
-
 
   isUserSelected:boolean=false;
   trStyle:any=null;
