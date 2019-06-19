@@ -9,7 +9,7 @@ import { UserService } from 'src/sve/admin/user.service';
 })
 export class UserListComponent implements OnInit {
 
-  api:string='http://localhost:4200/maga/users';
+//  api:string='http://localhost:4200/maga/users';
 
   pageIndex = 1;
   pageSize = 10;
@@ -17,22 +17,24 @@ export class UserListComponent implements OnInit {
   //loading = true;
 
   userDataList:any=[];
+  tableOptions:any = {"loading":true,"pageIndex":1,"pageSize":10,"total":26,"sortName":null,"sortValue":null,"keywords":null}
 
   constructor(
     private el:ElementRef,
     private renderer2:Renderer2,
-    private http:HttpClient,
+//    private http:HttpClient,
     private user:UserService) { }
 
   ngOnInit() {
-    this.http.get(this.api).subscribe(
-      response=>{
-        this.userDataList=response;
-      }
-    )
+    // this.http.get(this.api).subscribe(
+    //   response=>{
+    //     this.userDataList=response;
+    //   }
+    // )
 
-    this.user.listUser(this.pageIndex,this.pageSize).subscribe(results=>{
+    this.user.listUser(this.tableOptions).subscribe(results=>{
       console.log(results);
+      this.userDataList=results;
     })
 
 

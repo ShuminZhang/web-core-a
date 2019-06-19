@@ -1,23 +1,28 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { CommonService } from '../common.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  api='http://localhost:4200/api';
+  api='http://localhost:4200/user';
   httpOptions={
     headers:new HttpHeaders({
       'Content-Type':'application/json'
     })
   };
 
-  constructor(private http:HttpClient) { }
+  constructor(
+    public http:HttpClient,
+    public comm:CommonService) {
+      this.api=comm.api.user;
+     }
 
-  listUser(pageIndex:any,pageSize:any){
-    let pageOptions:any = {'index':pageIndex,'size':pageSize};
+  listUser(pageOptions:any){
+//    let pageOptions:any = {'index':pageIndex,'size':pageSize};
     return new Observable<any>((observer)=>{
       this.http.post(this.api+'/list',pageOptions,this.httpOptions).subscribe(response=>{
         console.log(response);

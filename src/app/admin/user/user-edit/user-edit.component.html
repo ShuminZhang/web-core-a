@@ -1,55 +1,92 @@
-<form nz-form style="background:lightgrey;margin-left:5px;border-radius:5px;">
+<form 
+ [formGroup]="validateForm" (ngSubmit)="submitForm"
+ nz-form style="background:lightgray;margin-left:5px;border-radius:5px">
 
   <nz-form-item>
-    <nz-form-label [nzSpan]="6" nzFor="username">username</nz-form-label>
-    <nz-form-control [nzSpan]="14">
-      <input nz-input name="username" type="username" id="username">
+    <nz-form-label [nzSpan]="6" nzFor="username" nzRequired>username</nz-form-label>
+    <nz-form-control [nzSpan]="14" nzHasFeedback>
+      <input nz-input  formControlName="username" name="username" type="text" id="username">
+      <nz-form-explain *ngIf="validateForm.get('username')?.dirty && validateForm.get('username')?.errors || validateForm.get('username')?.pending">
+          <ng-container *ngIf="validateForm.get('username')?.hasError('required')">请输入账户名！</ng-container>
+          <ng-container *ngIf="validateForm.get('username')?.hasError('duplicated')">该账户已经存在！</ng-container>
+          <ng-container *ngIf="validateForm.get('username')?.pending">正在验证该账户...</ng-container>  
+      </nz-form-explain>
     </nz-form-control>
   </nz-form-item >
 
   <nz-form-item>
-      <nz-form-label [nzSpan]="6" nzFor="password">password</nz-form-label>
-      <nz-form-control [nzSpan]="14">
-        <input nz-input name="password" type="password" id="password">
+      <nz-form-label [nzSpan]="6" nzFor="name" nzRequired>realname</nz-form-label>
+      <nz-form-control [nzSpan]="14" nzHasFeedback>
+        <input nz-input formControlName="name" name="name" type="text" id="name"
+        [(ngModel)]="userData.data.name"
+        >
+        <nz-form-explain *ngIf="validateForm.get('name')?.dirty && validateForm.get('name')?.errors">请输入你的真实姓名！</nz-form-explain>
       </nz-form-control>
     </nz-form-item >
 
-    <nz-form-item>
-        <nz-form-label [nzSpan]="6" nzFor="name">name</nz-form-label>
-        <nz-form-control [nzSpan]="14">
-          <input nz-input name="name" type="name" id="name">
-        </nz-form-control>
-      </nz-form-item >
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" nzFor="password" nzRequired>password</nz-form-label>
+    <nz-form-control [nzSpan]="14" nzHasFeedback>
+      <input nz-input formControlName="password" name="password" type="password" id="password"
+      [(ngModel)]="userData.data.password" 
+      (ngModelChange)="updateConfirmValidator()"
+      >
+      <nz-form-explain *ngIf="validateForm.get('password')?.dirty && validateForm.get('password')?.errors">请输入密码！</nz-form-explain>
+    </nz-form-control>
+  </nz-form-item >
 
-      <nz-form-item>
-          <nz-form-label [nzSpan]="6" nzFor="phone">phone</nz-form-label>
-          <nz-form-control [nzSpan]="14">
-            <input nz-input name="phone" type="phone" id="phone">
-          </nz-form-control>
-        </nz-form-item >
+  <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="checkPassword" nzRequired>comfirm password</nz-form-label>
+      <nz-form-control [nzSpan]="14" nzHasFeedback>
+        <input nz-input formControlName="checkPassword" name="checkPassword" type="password" id="checkPassword">
+        <nz-form-explain *ngIf="validateForm.get('checkPassword')?.dirty && validateForm.get('checkPassword')?.errors">
+            <ng-container *ngIf="validateForm.get('checkPassword')?.hasError('required')">请重复输入你的密码！</ng-container>
+            <ng-container *ngIf="validateForm.get('checkPassword')?.hasError('confirm')">你输入的两个密码不同！</ng-container>
+          </nz-form-explain>        
+      </nz-form-control>
+    </nz-form-item >
 
-        <nz-form-item>
-            <nz-form-label [nzSpan]="6" nzFor="email">E-mail</nz-form-label>
-            <nz-form-control [nzSpan]="14">
-              <input nz-input name="email" type="email" id="email">
-            </nz-form-control>
-          </nz-form-item >
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" nzFor="phone" nzRequired>phone</nz-form-label>
+    <nz-form-control [nzSpan]="14" nzHasFeedback>
+      <input nz-input formControlName="phone" name="phone" type="tel" id="phone"
+      [(ngModel)]="userData.data.phone"
+      >
+      <nz-form-explain *ngIf="validateForm.get('phone')?.dirty && validateForm.get('phone')?.errors">请输入电话号码！</nz-form-explain>
+    </nz-form-control>
+  </nz-form-item >
 
-          <nz-form-item>
-              <nz-form-label [nzSpan]="6" nzFor="roleid">roleid</nz-form-label>
-              <nz-form-control [nzSpan]="14">
-                <input nz-input name="roleid" type="roleid" id="roleid">
-              </nz-form-control>
-            </nz-form-item >
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" nzFor="email" nzRequired>E-mail</nz-form-label>
+    <nz-form-control [nzSpan]="14" nzHasFeedback>
+      <input nz-input formControlName="email" name="email" type="text" id="email"
+      [(ngModel)]="userData.data.email"
+      >
+      <nz-form-explain *ngIf="validateForm.get('email')?.dirty && validateForm.get('email')?.errors">
+          <ng-container *ngIf="validateForm.get('email')?.hasError('email')">你输入的不是正确的电子邮件地址！</ng-container>
+          <ng-container *ngIf="validateForm.get('email')?.hasError('required')">请输入电子邮件地址！</ng-container>
+        </nz-form-explain>  
+    </nz-form-control>
+  </nz-form-item >
 
-            <nz-divider></nz-divider>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" nzFor="roleid" nzRequired>roleid</nz-form-label>
+    <nz-form-control [nzSpan]="14" nzHasFeedback>
+      <input nz-input formControlName="roleid" name="roleid" type="text" id="roleid"
+      [(ngModel)]="userData.data.roleid"
+      >
+      <nz-form-explain *ngIf="validateForm.get('roleid')?.dirty && validateForm.get('roleid')?.errors">请选择角色！</nz-form-explain>
+    </nz-form-control>
+  </nz-form-item >
 
-            <nz-form-item>
-                <nz-form-control [nzOffset]="7" [nzSpan]="12">
-                  <!-- [disabled]="!validateForm.valid" -->
-                  <button nz-button nzType="primary" >Submit</button>
-                  <button nz-button (click)="resetForm($event)">Reset</button>
-                </nz-form-control>
-              </nz-form-item>
+  <nz-divider></nz-divider>
+
+  <nz-form-item>
+    <nz-form-control [nzOffset]="7" [nzSpan]="12">
+      <!--  [disabled]="!validateForm.valid" -->
+      <button nz-button nzType="default" (click)="doAdd($event)" >Add</button>
+      <button nz-button nzType="primary" (click)="doSave()"  [disabled]="!validateForm.valid">Save</button>
+    </nz-form-control>
+  </nz-form-item>
 
 </form>
