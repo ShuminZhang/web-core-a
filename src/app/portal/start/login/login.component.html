@@ -1,3 +1,49 @@
-<p>
-  login works!
-</p>
+<div nz-row nzType="flex" nzJustify="center">
+  <div nz-col nzSpan="8" style="background:#123456;border-radius:5px;">
+
+      <h2 style="text-align:center;color:aliceblue;padding:20px 0px 5px 0px">用户登录</h2>
+      <hr style="color:bisque">
+      <form style="margin:0px auto;padding:20px 0px;" nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+          <nz-form-item>
+            <nz-form-control>
+              <nz-input-group [nzPrefix]="prefixUser">
+                <input type="text" nz-input formControlName="userName" placeholder="Username" />
+              </nz-input-group>
+              <nz-form-explain *ngIf="validateForm.get('userName')?.dirty && validateForm.get('userName')?.errors"
+                >Please input your username!</nz-form-explain
+              >
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control>
+              <nz-input-group [nzPrefix]="prefixLock">
+                <input type="password" nz-input formControlName="password" placeholder="Password" />
+              </nz-input-group>
+              <nz-form-explain *ngIf="validateForm.get('password')?.dirty && validateForm.get('password')?.errors"
+                >Please input your Password!</nz-form-explain
+              >
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control>
+              <label nz-checkbox formControlName="remember">
+                <span>Remember me</span>
+              </label>
+              <a class="login-form-forgot" [routerLink]="[ '/portal/forget' ]" style="color:aliceblue">忘记密码</a>
+              <a [routerLink]="[ '/admin' ]">
+                <button nz-button class="login-form-button" [nzType]="'primary'">Log in</button>
+              </a>
+              
+              <i nz-icon nzType="robot" nzTheme="outline"></i>
+              <a [routerLink]="[ '/portal/regist' ]" style="color:aliceblue">注册</a>
+              
+              <i nz-icon nzType="home" nzTheme="outline"></i>
+              <a [routerLink]="[ '/portal' ]" style="color:aliceblue">返回首页</a>
+            </nz-form-control>
+          </nz-form-item>
+        </form>
+        <ng-template #prefixUser><i nz-icon type="user"></i></ng-template>
+        <ng-template #prefixLock><i nz-icon type="lock"></i></ng-template>
+
+  </div>
+</div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, ValidationErrors } from '@angular/forms';
 import { Observable, Observer } from 'rxjs';
+import { UserService } from 'src/sve/admin/user.service';
 
 
 @Component({
@@ -11,12 +12,14 @@ import { Observable, Observer } from 'rxjs';
 export class UserEditComponent implements OnInit {
 
   validateForm: FormGroup;
-  userBlank:any ={'username':'Ciaranim','name':'','password':'','email':'','phone':'','roleid':'0101'};
+  userBlank:any ={'username':'','name':'','password':'','email':'','phone':'','roleid':'0101'};
   userData:any ={'data':{},'edit':false};
 
 
 
-  constructor(private fb: FormBuilder) { 
+  constructor(
+    private fb: FormBuilder,
+    private user:UserService) { 
     Object.assign(this.userData.data,this.userBlank);
   }
 
@@ -69,7 +72,16 @@ export class UserEditComponent implements OnInit {
 
   doSave(){
     console.log(this.userData);
+    this.user.insertUser(this.userData.data).subscribe(response=>{
+      if(response.status===0){
+        this.user.comm.msg.success(response.msg);
+      }else{
+        this.user.comm.msg.error('用户增加失败！');
+      }
+      console.log(response);
+    })
   }
+
 
 
 }

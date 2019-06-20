@@ -8,7 +8,9 @@ import { CommonService } from '../common.service';
 })
 export class UserService {
 
-  api='http://localhost:4200/user';
+//  api='http://localhost:4200/user';
+    api:string = '';
+
   httpOptions={
     headers:new HttpHeaders({
       'Content-Type':'application/json'

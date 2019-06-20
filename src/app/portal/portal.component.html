@@ -1,3 +1,7 @@
-<p>
-  portal works!
-</p>
+<div style="background:lightblue;min-height:500px">
+  <a [routerLink]="[ 'login' ]">登录</a>
+  <a [routerLink]="[ 'regist' ]">注册</a>
+  <a [routerLink]="[ 'forget' ]">找回密码</a>
+<hr>
+  <router-outlet></router-outlet>
+</div>

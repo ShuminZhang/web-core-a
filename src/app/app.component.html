@@ -1,4 +1,19 @@
-<h2>App Root</h2>
+<nz-layout>
+    <nz-header style="background: #123456;border-radius: 5px;margin: 0px 5px;">
+        <div nz-row>
+            <div nz-col nzSpan="12" style="text-align:left;padding-left: 10px;">
+                <i nz-icon nzType="global" nzTheme="outline" [nzSpin]="true"></i>
+                竞赛团队管理平台
+            </div>
+            <div nz-col nzSpan="12" style="text-align:right;">
+                <a [routerLink]="[ '/race' ]" style="padding:0px 20px;color:aliceblue;">| 竞赛简介</a>
+                <a [routerLink]="[ '/portal/login' ]" style="padding:0px 20px;color:aliceblue;">| 登录</a>
+                <a [routerLink]="[ '/regist' ]" style="padding:0px 20px;color:aliceblue;">| 注册</a>
+                <a [routerLink]="[ '/forget' ]" style="padding:0px 20px;color:aliceblue;">| 密码找回</a>
+            </div>
+        </div>
+    </nz-header>
+<nz-content>
 <hr>
 <a [routerLink]="[ '/admin' ]">admin</a>
 <a [routerLink]="[ '/edit' ]">edit</a>
@@ -8,3 +23,7 @@
 <a [routerLink]="[ '/review' ]">review</a>
 <hr>
 <router-outlet></router-outlet>
+</nz-content>
+
+<nz-footer style="text-align: center;margin:5px 5px;border-radius:0px 5px;background:darkgrey;">Made by & Zhang Shumin</nz-footer>
+</nz-layout> 

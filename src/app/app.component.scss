@@ -1,3 +1,23 @@
 a{
     padding: 0px 20px;
 }
+
+nz-header,
+nz-footer {
+  background: #7dbcea;
+  color: #fff;
+}
+
+nz-layout {
+    margin-bottom: 20px;
+  }
+
+  nz-layout:last-child {
+    margin: 0;
+  }
+
+  [nz-icon] {
+    margin-right: 6px;
+    font-size: 36px;
+    color: #fff;
+  }
